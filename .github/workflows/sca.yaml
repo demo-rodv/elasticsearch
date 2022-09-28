@@ -19,7 +19,7 @@ jobs:
         java-version: 17
         
     - name: Build with Gradle
-      run: ./gradlew :distribution:archives:linux-tar:assemble
+      run: ./gradlw clean && ./gradlew :distribution:archives:linux-tar:assemble
       
     - name: Upload to CoPilot
       if: github.event_name == 'push' || github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
